@@ -1,0 +1,16 @@
+{
+  "name": "ngx-danmaku",
+  "version": "0.0.1",
+  "author": {
+    "name": "AndyT",
+    "email": "htu25399@gmail.com",
+    "url": "https://andyt2503.github.io/"
+  },
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
