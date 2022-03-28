@@ -34,8 +34,13 @@ import { StyleObjectLike } from './danmaku-types';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxDanmakuComponent implements OnInit, OnDestroy {
+  messages$ = new Subject<string>();
   @Input() src!: string;
-  @Input('messages') messages$!: Observable<string>;
+  @Input() set newMessage(value: string) {
+    if (!value) return;
+    this.messages$.next(value);
+  }
+  
   @Input() styles: StyleObjectLike = {
     'width': '100%',
     'height': '600px'
@@ -76,6 +81,7 @@ export class NgxDanmakuComponent implements OnInit, OnDestroy {
   private setupGetNewMessageContent(): void {
     this.messages$.pipe(takeUntil(this.destroyed$)).subscribe(message => {
       this.messageContent = [...this.messageContent, message];
+      //this.currentMessageIndex++;
       this.cdr.markForCheck();
     });
     interval(600).pipe(takeUntil(this.destroyed$)).subscribe(

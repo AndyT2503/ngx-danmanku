@@ -39,13 +39,13 @@ app.component.ts
 
 app.component.html
 ```
-<ngx-danmaku [src]="src" messagePosition="top" [messages]="message$"></ngx-danmaku>
+<ngx-danmaku [src]="src" messagePosition="top" [newMessage]="message$ | async"></ngx-danmaku>
 ```
 ## API
 
 | Property        | Description              | Type                          |
 |-----------------|--------------------------|-------------------------------|
 | src             | Iframe source url        | string                        |
-| message         | Value of new message     | Observable<string\>            |
+| newMessage      | Value of new message     | string            |
 | styles          | ngStyle of iframe element  | object                        |
 | messagePosition | Position of message      | "top" \| "middle" \| "bottom" |
