@@ -3,10 +3,17 @@
 Ngx-Danmaku is the Angular library to display flying comments on iframes element.
 
 ## Installation
+We recommend using @angular/cli to install，it not only makes development easier，but also allow you to take advantage of the rich ecosystem of angular packages and tooling.
 
+```
+$ ng new PROJECT_NAME
+$ cd PROJECT_NAME
+$ ng add ngx-danmaku
+```
 You can install it with npm:
-> npm install ngx-danmaku
-
+```
+$ npm install ngx-danmaku
+```
 ## Usage
 app.module.ts
 ```
