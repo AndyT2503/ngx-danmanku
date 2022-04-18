@@ -1,6 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { interval, Observable, Subject, takeUntil } from 'rxjs';
+import { interval, Subject, takeUntil } from 'rxjs';
 import { StyleObjectLike } from './danmaku-types';
 
 @Component({
@@ -40,7 +40,7 @@ export class NgxDanmakuComponent implements OnInit, OnDestroy {
     if (!value) return;
     this.messages$.next(value);
   }
-  
+
   @Input() styles: StyleObjectLike = {
     'width': '100%',
     'height': '600px'
