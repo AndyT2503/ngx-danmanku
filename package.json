@@ -17,7 +17,7 @@
   "ng-add": {
     "save": "true"
   },
-  "shematics": "./schematics/collection.json",
+  "schematics": "./schematics/collection.json",
   "keywords": [
     "ngx-danmaku",
     "danmaku",
