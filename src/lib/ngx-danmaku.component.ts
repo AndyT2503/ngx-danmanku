@@ -7,7 +7,7 @@ import { StyleObjectLike } from './danmaku-types';
   selector: 'ngx-danmaku',
   template: `
   <div class="iframe-container">
-      <div class="danmaku-text" [ngStyle]="styleMessage">
+      <div class="danmaku-text" [ngClass]="{'hidden': !visible}" [ngStyle]="styleMessage">
           <ng-container *ngFor="let message of messageContent; let i = index">
               <div [@textSlider] class="message" *ngIf="i === currentMessageIndex">
                   {{message}}
@@ -46,6 +46,8 @@ export class NgxDanmakuComponent implements OnInit, OnDestroy {
     'height': '600px'
   };
   @Input() messagePosition!: 'top' | 'middle' | 'bottom';
+
+  @Input() visible: boolean = true;
 
   styleMessage!: StyleObjectLike;
   currentMessageIndex = 0;

@@ -56,3 +56,4 @@ app.component.html
 | newMessage      | Value of new message     | string            |
 | styles          | ngStyle of iframe element  | object                        |
 | messagePosition | Position of message      | "top" \| "middle" \| "bottom" |
+| visible         | Whether show Danmaku message      | boolean |

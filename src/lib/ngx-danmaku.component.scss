@@ -10,7 +10,9 @@
       width: 100%;
       font-size: 20px;
       color: #ffff;
-
+      &.hidden {
+        display: none;
+      }
       .message {
           position: absolute;
       }
