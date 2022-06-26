@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subject, takeUntil } from 'rxjs';
 import { StyleObjectLike } from './danmaku-types';
 
@@ -34,6 +34,7 @@ import { StyleObjectLike } from './danmaku-types';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxDanmakuComponent implements OnInit, OnDestroy {
+  private readonly cdr = inject(ChangeDetectorRef);
   messages$ = new Subject<string>();
   @Input() src!: string;
   @Input() set newMessage(value: string) {
@@ -53,9 +54,6 @@ export class NgxDanmakuComponent implements OnInit, OnDestroy {
   currentMessageIndex = 0;
   messageContent: string[] = [];
   private destroyed$ = new Subject<void>();
-  constructor(
-    private readonly cdr: ChangeDetectorRef
-  ) { }
 
   ngOnInit(): void {
     this.setStyleMessage();

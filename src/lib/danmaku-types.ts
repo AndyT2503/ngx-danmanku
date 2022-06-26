@@ -1,3 +1,3 @@
-export interface StyleObjectLike {
+export type StyleObjectLike = {
   [key: string]: string;
 }
